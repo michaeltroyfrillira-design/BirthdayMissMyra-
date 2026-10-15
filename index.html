@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday, Miss Myra!</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background-glow"></div>
+
+    <!-- Confetti -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Floating balloons -->
+    <div class="balloon balloon1">🎈</div>
+    <div class="balloon balloon2">🎈</div>
+    <div class="balloon balloon3">🎈</div>
+    <div class="balloon balloon4">🎈</div>
+
+    <!-- Sparkles -->
+    <div id="sparkles"></div>
+
+    <!-- Music control -->
+    <button id="musicButton" class="music-button">
+        🎵 Play Music
+    </button>
+
+    <!-- Main birthday card -->
+    <main class="birthday-card">
+
+        <div class="crown">👑</div>
+
+        <p class="top-text">
+            A SPECIAL DAY FOR SOMEONE SPECIAL
+        </p>
+
+        <h1 class="birthday-title">
+            Happy Birthday!
+        </h1>
+
+        <h2 class="birthday-name">
+            Miss Myra 💖
+        </h2>
+
+        <!-- Birthday cake -->
+        <div class="cake-container">
+
+            <div class="cake-emoji">🎂</div>
+
+            <div class="cake-message">
+                Make a wish! ✨
+            </div>
+
+        </div>
+
+        <!-- Birthday wishes -->
+        <div class="birthday-message">
+
+            <p>
+                Wishing you a beautiful birthday filled with
+                happiness, laughter, love, and unforgettable memories!
+            </p>
+
+            <p>
+                May your dreams come true, your heart stay happy,
+                and every new day bring you something wonderful.
+            </p>
+
+            <p class="signature">
+                Enjoy your special day, Miss Myra! 💕
+            </p>
+
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+
+            <button id="celebrateButton" class="celebrate-button">
+                🎉 Celebrate!
+            </button>
+
+            <button id="messageButton" class="message-button">
+                💌 Open Your Surprise
+            </button>
+
+        </div>
+
+        <p class="footer-text">
+            Made with 💖 to make your birthday extra special.
+        </p>
+
+    </main>
+
+    <!-- Birthday surprise popup -->
+    <div id="messagePopup" class="popup-overlay">
+
+        <div class="popup-card">
+
+            <button id="closePopup" class="close-button"
+                    aria-label="Close message">
+                ✖
+            </button>
+
+            <div class="popup-icon">💝</div>
+
+            <h2>For Miss Myra</h2>
+
+            <p>
+                Happy Birthday, Miss Myra! 🥳
+            </p>
+
+            <p>
+                Today is all about celebrating you!
+                May your life be filled with beautiful moments,
+                genuine happiness, good health, and success.
+            </p>
+
+            <p>
+                Keep smiling, keep shining, and never stop
+                believing in the wonderful things ahead of you.
+            </p>
+
+            <h3>
+                Have the happiest birthday ever! 🎂💕
+            </h3>
+
+            <button id="popupCelebrate" class="celebrate-button">
+                🎊 Celebrate Again!
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Optional background music -->
+    <audio id="birthdayMusic" loop>
+        <source src="birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+              </html>
