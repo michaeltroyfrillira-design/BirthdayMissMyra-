@@ -1,0 +1,726 @@
+/* =========================
+   GENERAL SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #ff4fa3;
+    --purple: #8b5cf6;
+    --blue: #38bdf8;
+    --gold: #ffd166;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    font-family: 'Poppins', sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #32145c,
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #080018,
+            #17052d,
+            #090b2b
+        );
+
+    color: var(--white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 90px 18px 40px;
+
+    position: relative;
+}
+
+/* =========================
+   STATIC BACKGROUND GLOW
+========================= */
+
+.background-glow {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(255, 79, 163, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(56, 189, 248, 0.12),
+            transparent 30%
+        );
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+/* =========================
+   CONFETTI CANVAS
+========================= */
+
+#confettiCanvas {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 20;
+}
+
+/* =========================
+   FLOATING BALLOONS
+========================= */
+
+.balloon {
+    position: fixed;
+
+    bottom: -150px;
+
+    font-size: 55px;
+
+    animation: balloonFloat 18s linear infinite;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    will-change: transform, opacity;
+}
+
+.balloon1 {
+    left: 5%;
+
+    animation-delay: 0s;
+}
+
+.balloon2 {
+    left: 25%;
+
+    animation-delay: 5s;
+}
+
+.balloon3 {
+    right: 15%;
+
+    animation-delay: 2s;
+}
+
+.balloon4 {
+    right: 5%;
+
+    animation-delay: 8s;
+}
+
+@keyframes balloonFloat {
+
+    0% {
+        transform: translateY(0) rotate(-8deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-60vh) rotate(8deg);
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-125vh) rotate(-8deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   MAIN BIRTHDAY CARD
+========================= */
+
+.birthday-card {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(100%, 720px);
+
+    padding: 40px 28px;
+
+    text-align: center;
+
+    background: rgba(18, 10, 43, 0.96);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 0 25px rgba(139, 92, 246, 0.2),
+        0 0 50px rgba(255, 79, 163, 0.1);
+
+    animation: cardAppear 0.8s ease-out;
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   CROWN
+========================= */
+
+.crown {
+    font-size: 48px;
+
+    animation: crownBounce 3s ease-in-out infinite;
+}
+
+@keyframes crownBounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* =========================
+   TOP TEXT
+========================= */
+
+.top-text {
+    margin: 15px 0;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: var(--gold);
+}
+
+/* =========================
+   BIRTHDAY TITLE
+========================= */
+
+.birthday-title {
+    font-family: 'Pacifico', cursive;
+
+    font-size: clamp(36px, 8vw, 68px);
+
+    color: #ff83d0;
+
+    text-shadow:
+        0 0 8px rgba(255, 79, 163, 0.5),
+        0 0 18px rgba(139, 92, 246, 0.3);
+
+    animation: titleFloat 4s ease-in-out infinite;
+}
+
+@keyframes titleFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+/* =========================
+   BIRTHDAY NAME
+========================= */
+
+.birthday-name {
+    display: inline-block;
+
+    margin: 15px 0;
+
+    padding: 8px 25px;
+
+    font-size: clamp(25px, 5vw, 40px);
+
+    color: white;
+
+    background: linear-gradient(
+        90deg,
+        #ff4fa3,
+        #a855f7
+    );
+
+    border-radius: 50px;
+
+    box-shadow: 0 0 18px rgba(255, 79, 163, 0.3);
+
+    animation: namePulse 3s ease-in-out infinite;
+}
+
+@keyframes namePulse {
+
+    0%, 100% {
+        box-shadow: 0 0 12px rgba(255, 79, 163, 0.25);
+    }
+
+    50% {
+        box-shadow: 0 0 22px rgba(255, 79, 163, 0.45);
+    }
+}
+
+/* =========================
+   BIRTHDAY CAKE
+========================= */
+
+.cake-container {
+    margin: 25px 0;
+}
+
+.cake-emoji {
+    font-size: clamp(75px, 15vw, 105px);
+
+    display: inline-block;
+
+    animation: cakeBounce 3s ease-in-out infinite;
+}
+
+@keyframes cakeBounce {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-6px) rotate(2deg);
+    }
+}
+
+.cake-message {
+    margin-top: 5px;
+
+    color: var(--gold);
+
+    font-weight: 600;
+
+    font-size: 14px;
+}
+
+/* =========================
+   BIRTHDAY WISHES
+========================= */
+
+.birthday-message {
+    max-width: 560px;
+
+    margin: 25px auto;
+
+    line-height: 1.9;
+
+    color: #eee7ff;
+}
+
+.birthday-message p {
+    margin-bottom: 15px;
+}
+
+.signature {
+    font-family: 'Pacifico', cursive;
+
+    font-size: 19px;
+
+    color: #ff83d0;
+}
+
+/* =========================
+   BUTTON CONTAINER
+========================= */
+
+.button-container {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    font-family: 'Poppins', sans-serif;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.celebrate-button,
+.message-button {
+    border: none;
+
+    padding: 14px 24px;
+
+    border-radius: 50px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: white;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.celebrate-button {
+    background: linear-gradient(
+        135deg,
+        #ff4fa3,
+        #8b5cf6
+    );
+
+    box-shadow: 0 0 15px rgba(255, 79, 163, 0.3);
+}
+
+.message-button {
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #9333ea
+    );
+
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+}
+
+@media (hover: hover) {
+
+    .celebrate-button:hover,
+    .message-button:hover {
+        transform: translateY(-3px);
+
+        box-shadow: 0 0 25px rgba(255, 79, 163, 0.45);
+    }
+
+}
+
+.celebrate-button:active,
+.message-button:active {
+    transform: scale(0.97);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer-text {
+    margin-top: 30px;
+
+    color: #b9a9d9;
+
+    font-size: 12px;
+}
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button {
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    z-index: 30;
+
+    padding: 11px 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 50px;
+
+    color: white;
+
+    background: #241044;
+
+    font-size: 13px;
+}
+
+/* =========================
+   POPUP OVERLAY
+========================= */
+
+.popup-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.8);
+
+    z-index: 50;
+}
+
+.popup-overlay.show {
+    display: flex;
+
+    animation: overlayAppear 0.25s ease;
+}
+
+@keyframes overlayAppear {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* =========================
+   POPUP CARD
+========================= */
+
+.popup-card {
+    position: relative;
+
+    width: min(100%, 480px);
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 38px 24px;
+
+    text-align: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 24px;
+
+    background: linear-gradient(
+        145deg,
+        #241044,
+        #4a145d,
+        #17133d
+    );
+
+    box-shadow: 0 0 30px rgba(255, 79, 163, 0.25);
+
+    animation: popupAppear 0.35s ease-out;
+}
+
+@keyframes popupAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.popup-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+.popup-card h2 {
+    color: #ff83d0;
+
+    margin-bottom: 20px;
+}
+
+.popup-card p {
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+.popup-card h3 {
+    color: var(--gold);
+
+    margin: 20px 0;
+}
+
+.close-button {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 22px;
+
+    padding: 5px;
+}
+
+/* =========================
+   SPARKLES
+========================= */
+
+#sparkles {
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 3;
+}
+
+.sparkle {
+    position: absolute;
+
+    color: white;
+
+    animation: sparkleFade 2s ease-in-out forwards;
+}
+
+@keyframes sparkleFade {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+}
+
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 80px 12px 25px;
+    }
+
+    .birthday-card {
+        padding: 32px 17px;
+
+        border-radius: 22px;
+    }
+
+    .top-text {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+    .birthday-message {
+        font-size: 14px;
+    }
+
+    .button-container {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .celebrate-button,
+    .message-button {
+        width: 100%;
+    }
+
+    .music-button {
+        top: 10px;
+        right: 10px;
+
+        font-size: 12px;
+    }
+
+    .balloon {
+        font-size: 38px;
+    }
+
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+
+        scroll-behavior: auto !important;
+
+        transition: none !important;
+    }
+
+}
